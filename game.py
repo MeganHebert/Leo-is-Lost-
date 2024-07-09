@@ -1,3 +1,50 @@
+import csv
+
+with open('Leo_is_Lost_input.csv','r') as file:
+    game_input = csv.reader(file)
+   
+    input_rows = list(game_input)
+    # print(input_rows)
+print()
+
+
+class Scenes:
+    def __init__(self):
+        self.scenes = {}
+
+    def get_scenes(self):
+
+        for i in range(len(input_rows)):
+            self.scenes["scene_" + str(i)] = input_rows[i][1]
+
+        return self.scenes
+
+class Choices:
+    def __init__(self):
+        self.choices = {}
+    
+    def get_choices(self):
+        inc_num = 0
+
+        for i in range(len(input_rows)):
+            if i == 0 or input_rows[i][2] == "":
+                continue
+
+            """ if input_rows[i][2] == "":
+               continue  # continue to next iteration of the for loop  """
+
+            inc_num += 1
+
+            self.choices["choice_" + str(inc_num)] = input_rows[i][2]
+            self.choices["choice_" + str(inc_num)] = input_rows[i][4]
+
+
+            # filtered_choices = {key: value for key, value in self.choices.items() if value.strip()}
+
+            # print(filtered_choices)
+        return self.choices
+
+
 if __name__ == "__main__":
     print("Welcome to Leo is Lost!")
     print("A golden retriever, Leo, and his owner went on a hike through the wilderness.")
@@ -7,64 +54,13 @@ if __name__ == "__main__":
     name = input()
     print(f"Thank you, {name}! Lets help Leo!")
 
+    scenes_obj = Scenes()
+    scenes_dic = scenes_obj.get_scenes()
+    print(scenes_dic["scene_1"])
 
-import csv
-
-with open('Leo_is_Lost_input.csv','r') as file:
-    game_input = csv.reader(file)
-   
-    input_rows = list(game_input)
-    #print(input_rows)
-print()
+    choices_obj = Choices()
+    choices_dic = choices_obj.get_choices()
+    print(choices_dic)
 
 
 
-#first_scene = input_rows[1][1]
-second_scene = input_rows[2][1]
-third_scene = input_rows[3][1]
-fourth_scene = input_rows[4][1]
-fifth_scene = input_rows[5][1]
-sixth_scene = input_rows[6][1]
-seventh_scene = input_rows[7][1]
-
-first_scene_choice1 = input_rows[1][2]
-first_scene_choice2 = input_rows[1][4]
-
-
-#print(first_scene_choice2)
-
-class FirstDecision:
-    def __init__(self):
-        self.first_scene = input_rows[1][1]
-
-        print(self.first_scene)
-
-
-
-
-
-    """ def scene_one():
-        print(first_scene)
-
-        print(f"Should Leo: {first_scene_choice1} or {first_scene_choice2}")
-        user_input1 = input()
-        print(user_input1.lower())
-
-        if user_input1 == first_scene_choice1:
-            print(second_scene)
-        elif user_input1 == first_scene_choice2:
-            print(fourth_scene)
-        else:
-            print("Please enter a valid input, either type: turn left or turn right")
-            user_input1 = input().lower()
-            #scene_one()
-
-
-        #print(user_choice_first_scene)
-
-
-
-    #scene_one()
- """
-
-FirstDecision()

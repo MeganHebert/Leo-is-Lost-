@@ -20,32 +20,27 @@ print()
 
 
 class Scenes:
-
-    scenes = {}
-
-    for i in range(len(input_rows)):
-        scenes["scene_" + str(i)] = input_rows[i][1]
-
-    print(scenes)
-
-"""     def get_scenes():
-        scenes = {}
-
-        for i in range(len(input_rows)):
-            scenes["scene_" + str(i+1)] = input_rows[i][1]
-
-
-        print(scenes)
-
-
     def __init__(self):
         self.scenes = {}
 
+    def get_scenes(self):
+
         for i in range(len(input_rows)):
-            self.scenes["scene_" + str(i+1)] = input_rows[i][1]
+            self.scenes["scene_" + str(i)] = input_rows[i][1]
 
         print(self.scenes)
+
+scenes_obj = Scenes()
+print(scenes_obj.get_scenes())
+
+"""     def __init__(self):
+        self.scenes = {}
+
+        for i in range(len(input_rows)):
+            self.scenes["scene_" + str(i)] = input_rows[i][1]
+
+        print(self.scenes) """
     
- """
+
 
 
