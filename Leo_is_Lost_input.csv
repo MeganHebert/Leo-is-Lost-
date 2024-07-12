@@ -1,8 +1,8 @@
 ﻿scene_id,scene_description,choice_1,choice_1_result,choice_2,choice_2_result
 1,Leo is at a T in the path,turn left,2,turn right,4
-2,Leo finds a hotdog,scarf down the hotdog,3,sadly walk by it,6
+2,Leo finds a hotdog,scarf it down,3,sadly walk by it,6
 3,Leo starts repeatedly burping. His owner recognizes the noise and run in Leos direction. They're reunited! You Win!,,,,
-4,Leo finds a lake ,jump in and play,5,sadly walk by it,7
+4,Leo finds a lake,jump in and play,5,sadly walk by it,7
 5,Leos owner knows he can't resist a good swim. His owner spots the lake and heads in that direction. They're reunited! You Win!,,,,
 6,"As Leo continues to walk, his mind still on the hotdog, he hears his owner's whistle and happily runs in their direction. They're reunited! You Win!",,,,
 7,"As Leo continues to walk, he spots a flock of birds and sprints after them. The commotion of the birds taking flight catches his owner's attention, and they immediately run towards him. They're reunited! You Win!",,,,

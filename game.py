@@ -1,5 +1,7 @@
+#Coded by: Megan Hebert 
+#Date: 7/10/24
+
 import csv
-import io
 
 with open('Leo_is_Lost_input.csv','r') as file:
     game_input = csv.reader(file)
@@ -54,13 +56,11 @@ class Play:
         choices_obj = Choices()
         choices_dic = choices_obj.get_choices()
 
-
         question_1 = f"{scenes_dic['scene_1']}. Should he '{choices_dic['choice_1']}' or '{choices_dic['choice_4']}':"
         print(question_1)
 
         user_choice1 = input()
         user_choice1 = user_choice1.strip()
-
 
         while True:
             if user_choice1 == choices_dic['choice_1']:
@@ -114,13 +114,14 @@ class Play:
                 user_choice1 = input()
                 continue 
 
-
-        with open('Leo_is_Lost_output.csv', 'w', newline="") as file: 
+        with open('Leo_is_Lost_output.csv', 'a', newline="") as file: 
             writer = csv.writer(file, delimiter=",")
 
+            writer.writerow(["Player",name])
             writer.writerow([question_1, user_choice1])
             writer.writerow([question_final, user_choice_final])
             writer.writerow([winning_scene])
+            writer.writerow([])
             
 
 if __name__ == "__main__":
